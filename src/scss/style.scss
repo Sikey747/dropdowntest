@@ -1,0 +1,18 @@
+@use "sass:math";
+
+@import "base/mixins";
+//@import "fonts/fonts";
+//@import "fonts/icons";
+@import "base/var";
+@import "base/null";
+@import "base/animation";
+@import "base";
+@import "common";
+
+// Підключення стилів окремих блоків
+@import "header";
+@import "footer";
+
+// Підключення стилів окремих сторінок
+@import "home";
+@import 'remixicon/fonts/remixicon.css'

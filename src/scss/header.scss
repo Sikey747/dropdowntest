@@ -1,0 +1,491 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: hsl(220, 24%, 12%);
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--white-color);
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: rem(30) 0;
+  background-color: var(--black-color);
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  z-index: var(--z-fixed);
+
+  &__container {
+	max-width: 1120px;
+  }
+}
+
+.logo {
+	display: inline-flex;
+	align-items: center;
+	column-gap: .25rem;
+	font-weight: var(--font-semi-bold);
+	&__icon {
+		font-weight: initial;
+		font-size: 1.25rem;
+	  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap:1rem;
+}
+
+.menu {
+
+	&__items {
+		height: 100%;
+		display: flex;
+	}
+
+	&__item {
+		position: relative;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap : rem(10);
+		padding: rem(15);
+		
+		&:hover{
+			background-color: transparent;
+		}
+	}
+
+	&__link {
+		
+	}
+
+	&__button {
+		display: flex;
+		justify-content: space-between;
+		align-items:center;
+		width: 100%;
+	}
+
+	&__dropdown-button {
+	}
+
+	&__icon-box {
+	}
+
+	&__icon {
+	
+	}
+
+	&__submenu-dropdown-button {
+	}
+}
+
+.top-menu {
+
+	&__item {
+	}
+}
+
+.dropdown {
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	opacity: 0;
+	pointer-events: none;
+ 	transition: max-height .4s ease-out;
+	transition: opacity .3s, top .3s;
+	background-color: var(--black-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+	transform-origin: 0 0;
+	transform: rotateX(-90deg);
+
+	&__item {
+		min-width: rem(200);
+		transition: all 0.2s ease-in-out;
+		&:hover{
+			background-color:#444460
+		}
+		&_chenger{
+
+		}
+	}
+
+	&__icon-box {
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+		gap: rem(15);
+	}
+
+	&__icon {
+		display: inline-flex;
+		transition: all 0.3s ease-in-out;
+
+		&_submenu {
+		}
+
+		&_top-menu{
+		}
+	}
+
+	&__menu {
+	}
+
+	&__submenu {
+	}
+}
+
+.submenu {
+	position: absolute;
+	left: 100%;
+	top: 0 !important;
+	&__item {
+		min-width: rem(200);
+	}
+}
+
+// Only fo Pc style Hover
+.mouse{
+
+	/* rotate arrow topmenu */
+	.top-menu__item.dropdown__item_chenger:hover .dropdown__icon_top-menu{
+		transform: rotate(-180deg);
+	}
+
+	/* Show dropdown menu */
+	.top-menu__item.dropdown__item_chenger:hover .dropdown__menu {
+	  opacity: 1;
+	  pointer-events: initial;
+	  visibility: visible;
+	  transform: rotateX(0deg);
+	  transition: all .3s ease;
+	}
+  
+	 /* rotate arrow submenu */					
+	 .dropdown__item.submenu__item_chenger:hover .dropdown__icon_submenu{
+		transform: rotate(-90deg);
+	  }
+
+	/* Show dropdown submenu */
+	.dropdown__item.submenu__item_chenger:hover .dropdown__submenu{
+	  opacity: 1;
+	  pointer-events: initial;
+	  visibility: visible;
+	  transform: rotateX(0deg);
+		transition: all .3s ease;
+
+	}
+
+
+}
+
+ @media (max-width: $mobile) {
+	.menu {
+		position: absolute;
+			  left: 0;
+			  top: 100%;
+			  width: 100%;
+			  height: 0;
+			  overflow: auto;
+			  pointer-events: none;
+			  opacity: 0;
+			  visibility: hidden;
+			  transition: all .4s, opacity .3s;
+
+		&__items {
+		}
+	
+		&__item {
+		
+	
+		&__link {
+			
+		}
+	
+		&__button {
+		
+		}
+	
+		&__dropdown-button {
+		}
+	
+		&__icon-box {
+		}
+	
+		&__icon {
+		
+		}
+	
+		&__submenu-dropdown-button {
+		}
+	}
+	
+	.top-menu {
+	
+		&__item {
+
+		}
+	}
+	
+	.dropdown {
+
+	
+		&__item {
+
+			&:hover{
+			
+			}
+			&_chenger{
+	
+			}
+		}
+	
+		&__icon-box {
+	
+		}
+	
+		&__icon {
+		
+	
+			&_submenu {
+			}
+	
+			&_top-menu{
+			}
+		}
+	
+		&__menu {
+		}
+	
+		&__submenu {
+		}
+	}
+	
+	.submenu {
+	
+		&__item {
+		
+		}
+	}
+ }
+ .touch{
+		 .dropdown__arrow_open {
+			transform: rotate(-180deg);
+		  }
+		  .dropdown_open{
+			height: 100vh;
+			pointer-events: initial;
+			opacity: 1;
+			visibility: visible;
+	
+		  }
+	}  
+}
+
+
+// Only fo mobile/tablet style
+// .touch{
+// 	.dropdown_open{
+// 	   opacity: 1;
+// 	   top: 100%;
+// 	   pointer-events: initial;
+// 	   transition: top .3s;
+// 	}
+
+// }
+// .mouse{
+// 	/* Show dropdown menu & submenu */
+// 	.dropdown__item:hover .dropdown__menu, 
+// 	.dropdown__subitem:hover > .dropdown__submenu {
+// 	  max-height: 1000px;
+// 	  transition: max-height .4s ease-in;
+// 	}
+	
+// 	/* Rotate dropdown icon */
+// 	.dropdown__item:hover .dropdown__arrow {
+// 	  transform: rotate(-180deg);
+// 	}
+	
+// 	.dropdown__subitem:hover .dropdown__arrow_submenu{
+// 		transform: rotate(-deg);
+// 	}
+// 	}
+	
+
+
+
+
+// .nav__link {
+//   color: var(--white-color);
+//   background-color: var(--black-color);
+//   font-weight: var(--font-semi-bold);
+//   padding: 1.25rem 1.5rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   transition: background-color .3s;
+//   width: 100%;
+// }
+
+// .nav__link:hover {
+//   background-color: var(--black-color-light);
+// }
+
+// /* Show menu */
+// .show-menu {
+//   opacity: 1;
+//   top: 3.5rem;
+//   pointer-events: initial;
+// }
+
+
+// /*=============== DROPDOWN ===============*/
+// .dropdown__item {
+//   cursor: pointer;
+// }
+
+// .dropdown__arrow {
+//   font-size: 1.25rem;
+//   font-weight: initial;
+//   transition: transform .4s;
+// }
+
+// .dropdown__link, 
+// .dropdown__sublink {
+//   padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+//   color: var(--white-color);
+//   background-color: var(--black-color-light);
+//   display: flex;
+//   align-items: center;
+//   column-gap: .5rem;
+//   font-weight: var(--font-semi-bold);
+//   transition: background-color .3s;
+//   width: 100%;
+//   justify-content: space-between;;
+
+ 
+// }
+
+// .dropdown__link i, 
+// .dropdown__sublink i {
+//   font-size: 1.25rem;
+//   font-weight: initial;
+// }
+
+// .dropdown__link:hover, 
+// .dropdown__sublink:hover {
+//   background-color: var(--black-color);
+// }
+
+// .dropdown__icon-box{
+// 	display: flex;
+// 	column-gap: 0.5rem;
+// }
+
+// /*=============== DROPDOWN SUBMENU ===============*/
+// .dropdown__add {
+// 	margin-left: auto;
+//   }
+  
+//   .dropdown__sublink {
+// 	background-color: var(--black-color-lighten);
+//   }
+  
+
+/* Navigation for mobile devices */
+// @media screen and (max-width: 1118px) {
+// 	.nav__menu {
+// 
+// 	}
+  
+// 	.nav__list {
+// 	  background-color: var(--black-color);
+// 	  padding-top: 1rem;
+// 	}
+//   }
+
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #ffffff;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

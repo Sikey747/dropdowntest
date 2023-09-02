@@ -1,0 +1,90 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+h4 {
+}
+
+h5 {
+}
+
+a {
+}
+
+.button {
+}
+
+blockquote {
+}
+
+p {
+}
+
+textarea,
+input {
+    &:focus {
+        outline: 1px solid rgb(196, 196, 196);
+    }
+    &::placeholder {
+    }
+    &:invalid:not(:placeholder-shown) {
+        border-bottom: rem(2) solid red;
+    }
+    &:valid:not(:placeholder-shown) {
+        border-bottom: rem(2) solid green;
+    }
+    &:active {
+        background: inherit;
+    }
+    &:focus {
+        outline: 1px solid var(--primary);
+    }
+    // &:-internal-autofill-selected {
+    //     background-color: #ffffff; /* Новый цвет фона */
+    // }
+}
+
+textarea {
+    resize: none;
+}
+
+//для случиевс с 2 контейнирами
+[class*="contain-whide"] {
+    max-width: rem(1470);
+    margin: 0 auto;
+}
+
+.logo {
+    &:hover path {
+    }
+}
+
+// .title-underline {
+//     position: relative;
+
+//     &::after {
+//         position: absolute;
+//         content: "";
+//         bottom: 0;
+//         left: 0;
+//         height: rem(4);
+//         width: rem(80);
+//         background: var(--primary);
+//         margin: rem(14) rem(0) rem(0) rem(0);
+//     }
+// }
+
+// li {
+//     a {
+//         &:hover {
+//             color: var(--inverse);
+//             transition: all 0.3s ease-in-out;
+//         }
+//     }
+// }
