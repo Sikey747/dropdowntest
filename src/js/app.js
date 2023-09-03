@@ -23,7 +23,7 @@ flsFunctions.addTouchClass();
 /* Додавання loaded для HTML після повного завантаження сторінки */
 // flsFunctions.addLoadedClass();
 /* Модуль для роботи з меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Модуль для закртия меню при нажатии куда угодно кроме хедера */
 //flsFunctions.menuCloseBackDrop();
 /* Модуль для смены активного класса в хедере при клике по айдишнику секции и при скролле */

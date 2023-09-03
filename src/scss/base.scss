@@ -6,7 +6,7 @@
 // @import "base/popup";
 
 // Стилі снекбаров
-@import "base/snackbar";
+// @import "base/snackbar";
 
 // Стили спинер
 // @import "base/spiner";
@@ -53,20 +53,20 @@ body {
 	.loaded & {
 	}
 	///////////////////////////backdrop
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 5;
-		background-color: transparent;
-		transition: all 0.3s ease-in-out;
-	}
-	.menu-open &::before {
-		background-color: rgba(0, 0, 0, 0.5);
-		height: 10000%;
-		width: 100%;
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: 5;
+	// 	background-color: transparent;
+	// 	transition: all 0.3s ease-in-out;
+	// }
+	// .menu-open &::before {
+	// 	background-color: rgba(0, 0, 0, 0.5);
+	// 	height: 10000%;
+	// 	width: 100%;
+	// }
 }
 // Оболонка wrapper ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
